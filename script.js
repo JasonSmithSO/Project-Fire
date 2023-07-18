@@ -16,9 +16,10 @@ trailers.forEach((trailer) => {
   const iframe = document.createElement('iframe');
   iframe.src = trailer.videoUrl;
   iframe.width = '100%';
-  iframe.height = '0';
-  iframe.style.paddingBottom = '75%'; /* Adjust the aspect ratio for TikTok-like square videos */
-  iframe.style.backgroundColor = '#000';
+  iframe.height = '100%';
+  iframe.frameBorder = '0';
+  iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
 
   videoContainer.appendChild(iframe);
   trailerSection.appendChild(videoContainer);
