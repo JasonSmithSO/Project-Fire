@@ -48,10 +48,16 @@ iframe {
     max-width: 100%;
   }
   
-  /* Adjust iframe height for vertical screens */
+  /* Adjust iframe aspect ratio for different screen orientations */
   @media screen and (orientation: portrait) {
     iframe {
-      padding-bottom: 100%; /* Adjust the aspect ratio as needed */
+      padding-bottom: 100%; /* Adjust the aspect ratio for vertical screens */
+    }
+  }
+  
+  @media screen and (orientation: landscape) {
+    iframe {
+      padding-bottom: 56.25%; /* Adjust the aspect ratio for horizontal screens */
     }
   }
 }
