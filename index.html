@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TikTok-like Trailer Showcase</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>ScrollTube</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <!-- Add your header content here -->
-  </header>
+  <!-- Watermark -->
+  <div class="watermark">ScrollTube</div>
 
-  <main>
-    <section id="trailer-section">
-      <!-- Trailer content will be dynamically added here -->
-    </section>
-  </main>
+  <!-- Buttons -->
+  <div class="buttons">
+    <button class="button" onclick="refreshVideos()">Refresh</button>
+    <div class="loading" id="loading">
+      <div class="loader"></div>
+    </div>
+  </div>
+
+  <!-- Video container -->
+  <div class="video-container" id="videoContainer">
+    <!-- Video sections -->
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/AjLKTz81bj8" allowfullscreen></iframe>
+    </div>
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/avz06PDqDbM" allowfullscreen></iframe>
+    </div>
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/Y274jZs5s7s" allowfullscreen></iframe>
+    </div>
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/f-zqS2CiZqw" allowfullscreen></iframe>
+    </div>
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/noxvcFVmG4E" allowfullscreen></iframe>
+    </div>
+    <div class="video-section">
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/VgBKUofIdVo" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
