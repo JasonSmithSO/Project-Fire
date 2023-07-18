@@ -15,8 +15,6 @@ trailers.forEach((trailer) => {
 
   const iframe = document.createElement('iframe');
   iframe.src = trailer.videoUrl;
-  iframe.width = '100%';
-  iframe.height = '100%';
   iframe.frameBorder = '0';
   iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
   iframe.allowFullscreen = true;
