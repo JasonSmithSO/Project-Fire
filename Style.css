@@ -1,38 +1,90 @@
-/* CSS styles for the TikTok-like Trailer Showcase */
+/* Set body background color and remove default margin/padding */
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header {
   background-color: #000;
-  padding: 20px;
-  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-#trailer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
+/* Create the container for the scrollable videos */
 .video-container {
-  width: 100%;
-  max-width: 320px;
-  position: relative;
-  padding-bottom: 200%; /* Adjust the aspect ratio for vertical phone screen shape */
-  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
 }
 
-.video-container iframe {
+/* Style the individual video sections */
+.video-section {
+  scroll-snap-align: start;
+  height: 120vh; /* Increase the height to make the outline longer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the video iframes */
+.youtube-video {
+  width: 56.25vh; /* Adjust the width to maintain a 9:16 aspect ratio for a vertical phone screen */
+  height: 100vh; /* Set the height to fill the entire viewport height */
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
+}
+
+/* Watermark styles */
+.watermark {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+/* Button styles */
+.buttons {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.button {
+  margin: 0 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
   border: none;
+}
+
+/* Loading animation */
+.loading {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
