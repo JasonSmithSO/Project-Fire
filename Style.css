@@ -17,7 +17,8 @@ body {
 /* Style the individual video sections */
 .video-section {
   scroll-snap-align: start;
-  height: 120vh; /* Increase the height to make the outline longer */
+  /* Change the height to a different value for each video section */
+  height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,47 +46,3 @@ body {
   font-size: 24px;
   font-weight: bold;
   opacity: 0.5;
-}
-
-/* Button styles */
-.buttons {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.button {
-  margin: 0 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-/* Loading animation */
-.loading {
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
