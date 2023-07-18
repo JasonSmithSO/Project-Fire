@@ -1,21 +1,25 @@
-// JavaScript code for the Netflix-like Trailer Showcase
+// JavaScript code for the TikTok-like Trailer Showcase
 const trailerSection = document.getElementById('trailer-section');
 
-// Create an array with the video URLs
-const videoUrls = [
-  'https://youtu.be/ex3C1-5Dhb8',
-  // Add more video URLs here if needed
+// Fetch trailer data from an API or use static data
+// Here's a simple example using static data
+const trailers = [
+  { videoUrl: 'https://www.youtube.com/embed/ex3C1-5Dhb8' },
+  // Add more trailer data here
 ];
 
-// Dynamically generate YouTube embeds for each video URL
-videoUrls.forEach((videoUrl) => {
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/${videoUrl.slice(-11)}`;
-  iframe.width = '560';
-  iframe.height = '315';
-  iframe.frameBorder = '0';
-  iframe.allow = 'autoplay; encrypted-media';
-  iframe.allowFullscreen = true;
+// Dynamically generate TikTok-like video embeds for each trailer
+trailers.forEach((trailer) => {
+  const videoContainer = document.createElement('div');
+  videoContainer.className = 'video-container';
 
-  trailerSection.appendChild(iframe);
+  const iframe = document.createElement('iframe');
+  iframe.src = trailer.videoUrl;
+  iframe.width = '100%';
+  iframe.height = '0';
+  iframe.style.paddingBottom = '75%'; /* Adjust the aspect ratio for TikTok-like square videos */
+  iframe.style.backgroundColor = '#000';
+
+  videoContainer.appendChild(iframe);
+  trailerSection.appendChild(videoContainer);
 });
