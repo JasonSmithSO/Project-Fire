@@ -1,90 +1,64 @@
-/* Set body background color and remove default margin/padding */
+/* CSS styles for the Netflix-like Trailer Showcase */
 body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+header {
   background-color: #000;
-  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Create the container for the scrollable videos */
-.video-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-behavior: smooth;
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
 }
 
-/* Style the individual video sections */
-.video-section {
-  scroll-snap-align: start;
-  height: 120vh; /* Increase the height to make the outline longer */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+#trailer-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
 }
 
-/* Style the video iframes */
-.youtube-video {
-  width: 56.25vh; /* Adjust the width to maintain a 9:16 aspect ratio for a vertical phone screen */
-  height: 100vh; /* Set the height to fill the entire viewport height */
+iframe {
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(56.25% + 20px);
   max-width: 100%;
-  max-height: 100%;
-  border-radius: 20px;
 }
 
-/* Watermark styles */
-.watermark {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  opacity: 0.5;
-}
-
-/* Button styles */
-.buttons {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.button {
-  margin: 0 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-/* Loading animation */
-.loading {
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  header,
+  nav {
+    padding: 10px;
+  }
+  
+  #trailer-section {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  iframe {
+    max-width: 100%;
+    padding-bottom: calc(56.25% + 10px);
+  }
+  
+  /* Adjust iframe aspect ratio for different screen orientations */
+  @media screen and (orientation: portrait) {
+    iframe {
+      padding-bottom: calc(100% + 10px); /* Adjust the aspect ratio for vertical screens */
+    }
+  }
+  
+  @media screen and (orientation: landscape) {
+    iframe {
+      padding-bottom: calc(56.25% + 10px); /* Adjust the aspect ratio for horizontal screens */
+    }
+  }
 }
