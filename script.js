@@ -1,4 +1,3 @@
-// Refresh function to shuffle videos
 function refreshVideos() {
   const container = document.getElementById('videoContainer');
   const videos = Array.from(container.querySelectorAll('.video-section'));
@@ -30,43 +29,3 @@ function refreshVideos() {
     });
   }, 1500);
 }
-
-// Scroll snap navigation using arrow keys
-window.addEventListener('keydown', function(e) {
-  const container = document.querySelector('.video-container');
-  if (e.key === 'ArrowUp') {
-    container.scrollBy({
-      top: -window.innerHeight,
-      behavior: 'smooth'
-    });
-  } else if (e.key === 'ArrowDown') {
-    container.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  }
-});
-
-// Scroll snap navigation using touch gestures
-let touchStartY = 0;
-window.addEventListener('touchstart', function(e) {
-  touchStartY = e.touches[0].clientY;
-});
-
-window.addEventListener('touchend', function(e) {
-  const container = document.querySelector('.video-container');
-  const touchEndY = e.changedTouches[0].clientY;
-  const deltaY = touchEndY - touchStartY;
-
-  if (deltaY < -50) {
-    container.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  } else if (deltaY > 50) {
-    container.scrollBy({
-      top: -window.innerHeight,
-      behavior: 'smooth'
-    });
-  }
-});
