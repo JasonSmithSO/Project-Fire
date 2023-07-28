@@ -14,4 +14,24 @@ body {
 
 .video-section {
   scroll-snap-align: start;
-  height: 
+  height: 300px;
+  background-color: var(--color-1);
+}
+
+@media (min-width: 768px) {
+  .video-section {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-section {
+    height: 500px;
+  }
+}
+
+/* Define a custom color variable */
+
+:root {
+  --color-1: #fff;
+}
