@@ -10,6 +10,10 @@ body {
   overflow-y: scroll;
   height: 100vh;
   scroll-behavior: smooth;
+  background-color: black;
+  /* This will make the video container resize to the device's size */
+  width: 100%;
+  height: 100%;
 }
 
 .video-section {
